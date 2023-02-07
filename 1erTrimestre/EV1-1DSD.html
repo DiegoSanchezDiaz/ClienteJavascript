@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            var player = {
+                nombre: "Juan",
+                apellido: "García",
+                edad: 34
+	        }
+	        player.sexo="hombre";
+	        player.foto= "4:3";
+            console.log("Esto es un método "+ player.edad);
+
+	        function resumen(nombre, aprobadas, asignaturas) {
+	            var nombre= "Juan Garcia";        
+	            var aprobadas= 4;                  
+	            var asignaturas = 6;
+	            return (nombre + "(" + aprobadas + "/" + asignaturas + ")");
+	            
+	        };
+	        console.log("Resumen de " + resumen());
+        </script>
+    </body>
+</html>
+<!--
+    Lo primero que he hecho es identar el codigo
+    Lo segundo ha sido añadir una coma después de los elementos del array necesarios (linea 10)
+    Lo tercero es, al elemento apellido:García del array player, le añadimos comillas dobles puesto que es un string (linea 10)
+    Al elemento edad del array player le quitamos la coma, puesto que es el ultimo elemento y se termina el array (linea 11)
+    Al método function le falta un cierre de paréntesis (linea 14)
+    Dentro de ese método, "player.edad", hay que quitar esas comillas (liena 15)
+    Le cambio el nombre a la función, puesto que no se pueden utilizar palabras reservadas (linea 17)
+    Declaro tres variables dentro de la función, en vez de una sola y fuera (linea 18, 19, 20)
+    Añado el return, pero quitando: (linea 21)
+        - Las comillas simples
+        - El dolar
+        - Los corchetes
+        - El this.
+    Se ponen bien las comillas al texto que queremos que nos devuelva (linea 21)
+    Y fuera de la función llamamos a la misma, para que nos la muestre por consola (linea 23)
+-->

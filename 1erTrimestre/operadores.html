@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!--
+        <script>
+           let edad = 18;
+           let puedeVotar = (edad >= 18) ? "Puede votar" : "No puede votar";
+           alert(puedeVotar);
+
+           let sameResource;
+           console.log(sameResource); //-> undefined
+           console.log(typeof sameResource); // -> undefined
+           sameResource = null;
+           console.log(sameResource); // -> null
+           console.log(typeof sameResource); // -> Object
+        </script>
+        -->
+        <!--
+        <script>
+            function suma (a,b) {
+                if (b==undefined) {
+                    b=10;
+                    return a+b;
+                }
+            }
+            var resultado = suma(5);
+            alert (resultado);
+         </script>
+         -->
+
+         <!--
+         <script>
+            let nota = 6;
+            if (nota < 0 || nota > 10){
+                alert("Nota errónea")
+            } else if (nota < 5) {
+                alert ("Insuficiente");
+            } else if (nota == 5) {
+                alert("Suficiente");
+            } else if (nota == 6) {
+                alert("Bien");
+            } else if (nota == 7 || nota == 8) {
+                alert("Notable");
+            } else if (nota >= 9) {
+                alert("Sobresaliente");
+            }
+         </script>
+         -->
+
+         <script>
+            let nota = 11;
+            switch (nota) {
+                case 1,2,3,4:
+                    alert("Insuficiente");
+                    break;
+                case 5:
+                    alert ("Suficiente");
+                    break;
+                case 6:
+                    alert("Bien");
+                    break;
+                case 7:
+                    alert("Notable");
+                    break;
+                case 8:
+                    alert("Notable");
+                    break;
+                case 9:
+                    alert("Sobresaliente");
+                    break;
+                case 10:
+                    alert("Sobresaliente");
+                    break;
+                default:
+                    alert("Nota no válida");
+                    break;
+            }
+         </script>
+         
+        
+    </body>
+</html>

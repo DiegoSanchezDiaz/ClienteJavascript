@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            let letras = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
+            let dni = prompt ("Introduce tu DNI: ");
+            let numero = dni.splice(0,8,0);
+            alert(numero);
+
+            function valido() {
+                if (numero < 9 && numero > 0) {
+                    numero = numero % 23;
+                }
+
+            }
+
+        </script>
+    </body>
+</html>

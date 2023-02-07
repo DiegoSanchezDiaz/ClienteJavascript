@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            //SINTAXIS DE UNA FUNCION
+            //Funcion sin paramentros
+            function saludo(){
+                alert("Hola");
+            }
+
+            // Los paréntis () invocan a la función , si el resultado se guarda en una variable 
+            var resultado = resultado_saludo2 = saludo(); 
+            alert(resultado_saludo2);
+
+            // Sin paréntesis se puede guardar todo el código de la función en una variable o mostrar . 
+             var resultado_saludo2 = saludo ; 
+            alert(resultado_saludo2);
+
+            //Funcion con parametros
+             function producto (a, b) {
+                 return a * b;
+             }
+
+             //Los parentesis () invocan a la funcion
+             var resultado_producto = producto(3, 4);
+             alert(resultado_producto);
+
+             //Podemos ibtroducir en el alert directamente la funcion
+             alert(producto(5, 6));
+
+            // Sin paréntesis se puede guardar la funcion en una variable o mostrar 
+            alert(producto);
+
+            //Funcion anonima
+            var producto2 = function(a,b){
+                return a*b;
+            };
+            var resultado2 = producto2(4,5);
+            alert (resultado2);
+
+            var jjFunction = new Function ("a", "b", "return a*b;");
+            var resultado2 = jjFunction(5,7);
+            alert(resultado2);
+
+        </script>
+    </body>
+</html>

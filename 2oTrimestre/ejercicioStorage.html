@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+	<!--En primer lugar, comprobaremos si el navegador soporta Storage y mostraremos un mensaje con el
+	nombre de usuario si este se logeado en la página, diferenciando si es su primera visita o ya ha 
+	entrado en mas ocaciones.
+	Utilizaremos una función para llevar la cuenta de las veces que el usuario ha accedido a la página.
+	Crearemos dos funciones para incrementar y decrementar el valor del contador anterior. Finalmente crearemos
+	otra función para hacer el logout y restablecer los valores anteriores.
+	-->
+	
+</head>
+<body>
+	
+	<div>
+        <button type="button" id="incrementar">Incrementar</button>
+        <button type="reset" id="decrementar">Decrementar</button>
+        <button type="button" id="logout">Logout</button>
+    </div>
+
+	<p id="contador"></p>
+	<p id="saludo"></p>
+	
+    <script>
+	
+       if (typeof(Storage) !== "undefined") {
+			alert("El navegador si soporta WebStorage");
+			if (localStorage.usuario !== null) {
+				document.getElementById("saludo").innerHTML="¡Bienvenido de nuevo!" + localStorage.usuario;
+			
+	   		} else {
+				localStorage.usuario = prompt("¿Como te llamas?");
+				document.getElementById("saludo").innerHTML="¡Tu primera visita!" + localStorage.usuario;
+	   		}
+			   	document.getElementById("incrementar").addEventListener("click",incrementar);
+    			document.getElementById("decrementar").addEventListener("click",decrementar);
+    			document.getElementById("logout").addEventListener("click",logout);
+
+				sessionStorage.getItem("contador");
+				sessionStorage.setItem("contador","0");
+
+	   } else {
+			alert("El navegador no soporta WebStorage");
+	   }
+	   
+	   
+	   function incrementar() {
+			sessionStorage.setItem("contador",Number(sessionStorage.getItem("contador")) + 1);
+			document.getElementById("contador").innerHTML = "Contador: " + sessionStorage.getItem("contador");
+	   }
+	   
+	   function decrementar() {
+			sessionStorage.setItem("contador",Number(sessionStorage.getItem("contador")) - 1);
+			document.getElementById("contador").innerHTML = "Contador: " + sessionStorage.getItem("contador");
+	   }
+	   
+	   function logout() {
+			alert("Se ha cerrado la sesión" + localStorage.getItem("usuario"));
+			localStorage.removeItem("usuario");
+			document.getElementById("saludo").innerHTML = "";
+	   }
+	   
+    </script>
+</body>
+</html>

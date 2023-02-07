@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+
+            let nombre;
+            
+            while (typeof (nombre) == String || nombre == null) {
+
+                nombre = Number (prompt ("Introduce un número"));
+
+                if (typeof (nombre) !=isNaN) {
+                    alert("Ese nombre es válido");
+                } else {
+                    alert("Ese nombre no es válido");
+                }
+            }
+        </script>
+    </body>
+</html>

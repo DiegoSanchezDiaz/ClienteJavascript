@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            
+            let numAdivinar = Math.ceil(Math.random()*100);
+            alert (numAdivinar);
+            let numero = 0;   
+           
+            while (numero != numAdivinar) {
+                let numero = Number (prompt ("Introduce un número"));
+                if (numero == numAdivinar){
+                    alert("Has acertado el número");
+                }
+                else if (numero > numAdivinar) {
+                    alert("El número es menor");
+                } else {
+                    alert("El número es mayor");
+                }
+                
+            }
+
+        </script>
+
+    </head>
+    <body>
+    </body>
+</html>

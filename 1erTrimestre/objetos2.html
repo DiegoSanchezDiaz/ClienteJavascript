@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            let ahora = Date.now();
+            let fechaFija = new Date(2022,10,1);
+            let antes = Date.parse(fechaFija);
+            alert(ahora);
+            alert(antes);
+            let diferencia = antes - ahora;
+            alert(diferencia);
+            let milisegundos = diferencia / 1000;
+            let segundos = milisegundos / 60;
+            let minutos = segundos / 60;
+            let horas = minutos / 24;
+            alert("Milisegundos: " + milisegundos + ", segundos: " + segundos + ", minutos: " + minutos + ", horas: " + horas);
+        </script>
+    </body>
+</html>

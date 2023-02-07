@@ -1,0 +1,112 @@
+<!-- Práctica 201
+Se trata de crear un formulario lo más parecido al de la imagen siguiente:
+Se debe añadir un checkbox para seleccionar/deseleccionar todos los días con 
+disponibilidad.
+Realizar una validación (débil, en el lado del cliente) utilizando indistintamente los 
+métodos vistos en clase (los tres deben estar representados) con las siguientes 
+restricciones:
+• Nombre: debe ser obligatorio
+• Mensaje: de entre 2 y 500 caracteres
+• Color por defecto: oscuro
+• Días: seleccionar al menos dos
+• Preferente: por defecto marcado: lunes
+• Botón de “Hacer click”: ir a Google.com
+Adaptar el formulario, para que al hacer clic para enviar información, se envíe la
+información a un correo electrónico en texto plano.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practica 201</title>
+        <script src="201DSD.js"></script>
+    </head>
+    <style>
+        form{
+            margin: auto;
+            text-align: center;
+            width: 40%;
+            background-color: #4B4B4B;
+        }
+        #id{
+            margin: auto;
+            width: fit-content;
+        }
+        .error{
+            border: 3px solid red;
+        }
+    </style>
+    <body>
+        <form action="https://formsubmit.co/diegoxv19@gmail.com" method="POST" id="formulario" method="post">
+            <fieldset>
+                <legend style="text-align: left;">Datos personales</legend>
+                <p>Introduce tu nombre
+                <input type="text" name="nombre" id="nombre" pattern="[A-Za-z]{2,15}" onclick="pideNombre()" required>
+				</p>
+                <p>Mensaje</p>
+                <input type="text" name="mensaje" id="mensaje" pattern="{2,500}" onclick="pideMensaje()" maxlength="500" required>
+				</p>
+            </fieldset>
+        <div id="radios">
+            <label>Elige un color:</label>
+			<br>
+			<label>Rojo</label>
+            <input type="radio" name="color" id="rojo" onchange="cambiarFondo(id)" value="rojo">
+            <br>
+			<label>Verde</label>
+            <input type="radio" name="color" id="verde" onchange="cambiarFondo(id)" value="verde">
+            <br>
+			<label>Amarillo</label>
+            <input type="radio" name="color" id="amarillo" onchange="cambiarFondo(id)" value="amarillo">
+            <br>
+			<label>Negro</label>
+            <input type="radio" name="color" id="negro" onchange="cambiarFondo(id)" value="negro">
+            <br>
+        </div><br>
+        <div id="asignaturas">
+            <label>Selecciona una asignatura</label>
+            <select name="asignaturas" id="asignaturasSelect">Selecciona una asignatura
+                <option type="radio" name="asignaturas" value="DWES">DWES</option>
+                <option type="radio" name="asignaturas" value="DWEC">DWEC</option>
+                <option type="radio" name="asignaturas" value="DAW">DAW</option>
+                <option type="radio" name="asignaturas" value="DIW">DIW</option>
+            </select>
+        </div><br>
+        <div id="dias">
+            <label>Selecciona los dias de disponibilidad</label><br>
+            <input type="checkbox" name="dias" id="Lunes" checked>
+            <label>Lunes</label><br>
+            
+            <input type="checkbox" name="dias" id="Martes">
+            <label>Martes</label><br>
+
+            <input type="checkbox" name="dias" id="Miercoles">
+            <label>Miercoles</label><br>
+            
+            <input type="checkbox" name="dias" id="Jueves">
+            <label>Jueves</label><br>
+
+            <input type="checkbox" name="dias" id="Viernes">
+            <label>Viernes</label><br>
+        </div><br>
+    
+        <div id="diasPref">
+            <label for="diasPref">Selecciona el dia preferente</label>
+            <select name="diaPref" id="diaPref">
+                <option type="radio" name="diaPref" value="Lunes" selected>Lunes</option>
+                <option type="radio" name="diaPref" value="Martes">Martes</option>
+                <option type="radio" name="diaPref" value="Miercoles">Miercoles</option>
+                <option type="radio" name="diaPref" value="Jueves">Jueves</option>
+                <option type="radio" name="diaPref" value="Viernes">Viernes</option>
+            </select>
+        </div><br>
+
+        <div id="botones">
+            <input name="enviar" type="button" id="enviar" value="Haz click para enviar información">
+            <input name="resetear"type="reset" id="reset" value="Comenzar a rellenar de nuevo">
+            <input name="google"type="button" id="google" value="Haz click sobre mi">
+            
+        </div>
+    </form>
+    </body>
+</html>

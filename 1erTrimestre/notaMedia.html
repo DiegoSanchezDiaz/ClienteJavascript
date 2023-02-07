@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            let arrayNotas = [5.2,3.9,6,9.75,7.5,3];
+            let sumaNotas = arrayNotas.reduce((total,nota) => total += nota); //total = 33,35
+            let mediaNotas = (arrayNotas.reduce((sumaNotas,nota) => sumaNotas += nota, 0)) / arrayNotas.length;
+
+            alert(mediaNotas);
+
+        </script>
+    </body>
+</html>

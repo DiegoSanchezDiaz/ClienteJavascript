@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>navigator</title>
+    </head>
+    <body>
+        <p id="navegador"></p>
+        <script>
+           var texto = "";
+           texto += "<br/>Codename: " + navigator.appCodeName;
+           texto += "<br/>Name: " + navigator.appName;
+           texto += "<br/>Version: " + navigator.appVersion;
+           texto += "<br/>Motor: " + navigator.product;
+           texto += "<br/>Idioma: " + navigator.language;
+           texto += "<br/>Cookies: " + navigator.cookieEnabled;
+           texto += "<br/>UserAgent: " + navigator.userAgent;
+           document.getElementById("navegador").innerHTML = texto;
+           alert("Java activado : " + navigator.javaEnabled());
+
+            //Tamaño de pantalla
+            texto += "<br/>Ancho: " + screen.width;
+            texto += "<br/>Alto: " + screen.height;
+
+            //Tamaño pantalla sin barra de tareas
+            texto += "<br/>Ancho sin barra: " + screen.availWidth;
+            texto += "<br/>Alto sin barra: " + screen.availHeight;
+
+            //Profundidad de color de la pantalla
+            texto += "<br/> Profundidad : "+screen.colorDepth;
+            
+            //Resolucion de pantalla
+            texto += "<br/> Resolucion : "+screen.pixelDepth;
+
+            texto+= "<br/> Alto externo : "+window.outerHeight ;
+            texto+= "<br/> Ancho externo : "+window.outerWidth ;
+            texto+= "<br/> Alto interno : "+window.innerHeight ; 
+            texto+= "<br/> Ancho interno : "+window.innerWidth; 
+            texto += "<br/> Distancia X : "+window.screenX ;
+            texto += "<br/> Distancia Y : "+window.screenY ; 
+
+
+
+        </script>
+    </body>
+</html>

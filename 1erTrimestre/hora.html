@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Fecha</title>
+    </head>
+    <body>
+        <div id="hora"></div>
+        <script>
+            var miFecha = new Date();
+            var texto = document.getElementById("hora");
+            
+            if(miFecha.getHours() > 12) {
+                miFecha.getHours() =  miFecha.getHours() - 12 ; 
+                 texto.innerHTML = miFecha.getHours()+":"+miFecha.getMinutes()+":"+miFecha.getSeconds() +"P.M."; 
+            } else {
+                texto.innerHTML = miFecha.getHours()+":"+miFecha.getMinutes()+":"+miFecha.getSeconds()+"A.M" ; 
+            }
+            fecha();
+
+        </script>
+        
+    </body>
+</html>

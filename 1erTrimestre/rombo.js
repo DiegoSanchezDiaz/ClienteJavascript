@@ -1,0 +1,28 @@
+let asterisco="*";
+let blanco="&nbsp ";
+let texto="";
+let limite;
+do{
+    limite=Number(prompt("Introduzca el numero de filas",""));
+}while(isNaN(limite)||limite<=0);
+//MITAD SUPERIOR
+for (let i=0; i<limite;i++) {
+    texto+="<br>";
+    for (let j=0; j<limite-i-1;j++) {                     
+        texto+=blanco;    
+    }
+    for (let j=0; j<2*i+1;j++){
+        texto+=asterisco;
+    }
+}
+//MITAD INFERIOR
+for (let j=limite-2;j>=0;j--) {
+    texto+="<br>";
+    for (let i=0;i<limite-j-1;i++) {
+        texto+=blanco;
+    }
+    for (let i=0;i<2*j+1;i++) {
+        texto+=asterisco;
+    }
+}
+document.getElementById("rombo").innerHTML+=texto;

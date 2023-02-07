@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            let equipos= new Array[
+                [1][12] = 'Recreativo',
+                [2][11] = 'Atlético',
+                [3][10] = 'Sporting',
+                [4][9] = 'Real',
+                [5][8] = 'Unión',
+                [6][7] = 'Marino',
+                [8][6] = 'Juventud',
+                [9][5] = 'Rayo',
+                [10][4] = 'Diocesano',
+                [11][3] = 'Deportivo',
+                [12][10] = 'Internacional',
+                [3][10] = 'Adarve'
+            ];
+            const totalEquipos = 0;
+            //Una vuelta
+            const totalPartidos = totalEquipos*(totalEquipos - 1) / 2;
+            const totalJornadas = (totalEquipos - 1);
+            //Apuestas
+            const totalUnos = 0.5 * totalEquipos;
+            const totalEquis = 0.3 * totalEquipos;
+            const totalDoses = 0.2 * totalEquipos;
+            //Jornadas
+            /*tabla filas=jornadas columna=partidos
+            Se rellena de izquierda a derecha desde el 1 al impar anterior por filas
+            En la primera columna el último equipo a derecha e izquierda alternativamente
+            Se rellenan las filas de izquierda a derecha y de arriba a abajo decrecientemente
+            */
+
+            const jornada = 0;
+            let tablas = "";
+            for (i=1; i<=totalJornadas; i=i+1) {
+                console.log("Jornada" + i);
+            }
+
+            let jornada1 = Number(prompt("Selecciona jornada (1 a 6):")); 
+            switch(jornada) {
+            case 1:
+                console.log(quiniela[0]);
+                break;
+            case 2:
+                console.log(quiniela[1]);
+                break;
+            case 3:
+                console.log(quiniela[2]);
+                break;
+            case 4:
+                console.log(quiniela[3]);
+                break;
+            case 5:
+                console.log(quiniela[4]);
+                break;
+            case 6:
+                console.log(quiniela[5]);
+                break;
+            }
+        </script>
+    </body>
+</html>

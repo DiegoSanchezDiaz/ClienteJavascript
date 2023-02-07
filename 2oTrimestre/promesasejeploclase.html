@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <head>
+        <title>Promesas</title>
+    </head>
+    <body> 
+        <script>
+            let realizado = true;
+            const tareaCompletada = new Promise((resolve,reject) => {
+                if(realizado) {
+                    const trabajoCompletado = "La tarea se ha completado";
+                    resolve(trabajoCompletado);
+                    console.log(trabajoCompletado);
+                } else {
+                    const trabajoFallido = "La tarea no se ha completado";
+                    reject(trabajoFallido);
+                    console.log(trabajoFallido);
+                }
+            })
+            
+
+        </script>
+    </body>
+</html>

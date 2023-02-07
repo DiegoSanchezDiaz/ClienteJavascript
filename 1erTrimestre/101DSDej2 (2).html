@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script>
+            
+            function saludar() {
+                var saludo = "Hola";
+                window.alert (saludo);
+            }
+            saludar();
+            
+
+            let despedida = "Adiós";
+
+            function despedir() {
+                window.alert (despedida);
+            }
+            despedir();
+
+
+            var texto = "Fuera";
+            function ambito(texto) {
+                window.alert (texto);
+                var texto = "Dentro";
+                window.alert (texto);
+            }
+            ambito(texto);
+
+            var global = "Hola";
+            function funcion() {
+                global = "Adios";
+                window.alert(global);
+            }
+            funcion();
+
+        </script>
+        
+    </body>
+</html>

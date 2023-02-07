@@ -1,0 +1,26 @@
+body {
+	background-color: grey;
+    font-family: Verdana;
+    font-size: 10pt;
+}
+.naranja {
+    background-color: blue;
+    color: orange;
+}
+.consola {
+    background-color: black;
+    color: green;
+    font-family: 'Courier New';
+}
+.importante {
+    text-decoration: none ;
+}
+a:hover {
+    color: yellow;
+  }
+  
+#titulo {
+    font-family: Verdana;
+    color: #323232;
+    font-size: 40pt;
+}

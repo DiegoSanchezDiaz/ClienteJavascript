@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Promesa</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <!-- HTML con div y boton -->
+        <button id="miBoton" onclick="miFunction()">Click</button>
+        <div id="miDiv"></div>
+        <script>
+            let cont=0;
+
+            function miFunction() {
+                let boton=document.getElementById("miBoton").addEventListener("click", probarPromise);
+            }
+
+            // function promise
+            function probarPromise() {
+                let thisContador=++cont;
+                let miDiv=document.getElementById("miDiv");
+                miDiv.insertAdjacentHTML("beforeend", thisContador + ") Empieza el codigo sincrono <br/>");
+
+                // construir promesa
+                const promise = new Promise((resolve,reject)=> {
+                    miDiv.insertAdjacentHTML("beforeend", thisContador + ") Dentro de la promesa antes del timeOut. Empieza el codigo asincrono <br/>");
+
+                    window.setTimeout( function() {
+                        resolve(thisContador)}, Math.random() * 4000 + 1000);
+                    })
+                
+                    promise.then(
+                        function(val) {
+                            miDiv.insertAdjacentHTML('beforeend', thisContador + ") Dentro de then.Asincronia terminado <br/>")
+                    })
+
+                    promise.catch((reason)=>{
+                        console.miDiv('Promesa no cumplida (' + reason + ' aqui');
+                    })
+                    miDiv.insertAdjacentHTML('beforeend', thisContador + ") Codigo sincrono terminado <br/>")
+            }
+            
+        </script>
+    </body>
+</html>

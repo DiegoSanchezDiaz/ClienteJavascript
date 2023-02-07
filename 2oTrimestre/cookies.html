@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+<body>
+    <button onclick="crearModificarCookie()">crearModificarCookie</button>
+    <button onclick="leerCookie()">leerCookie</button>
+    <button onclick="borrarCookie()">borrarCookie</button>
+    <button onclick="verCookies()">verCookies</button>
+
+    <script>
+	
+        //setCookie function
+		function setCookie(nombre, valor, dias) {
+			let expires = "";
+			if (dias) {
+				let date = new Date();
+				date.setTime(date.getTime() + (dias * 24 * 60 * 60 * 1000));
+				expires = "; expires=" + date.toUTCString();
+			}
+			document.cookie = nombre + "=" + valor + expires + "; path=/";
+		}
+
+		//getCookie function
+		function getCookie(nombre) {
+			let nombreCookie = nombre + "=";
+			let arrayCookie = document.cookie.split(';');
+			for(let i = 0; i < arrayCookie.length; i++) {
+				let c = arrayCookie[i];
+				while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+				if (c.indexOf(nombreCookie) === 0) return c.substring(nombreCookie.length, c.length);
+			}
+			return null;
+		}
+
+		//deleteCookie function
+		function deleteCookie(nombre) {
+			document.cookie = nombre + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+		}
+
+		//createModificarCookie function
+		function crearModificarCookie() {
+			let nombre = prompt("Enter the nombre of the cookie: ");
+			let valor = prompt("Enter the valor of the cookie: ");
+			let dias = prompt("Enter the number of dias until the cookie expires: ");
+			setCookie(nombre, valor, dias);
+		}
+
+		//leerCookie function
+		function leerCookie() {
+			let name = prompt("Enter the name of the cookie: ");
+			let value = getCookie(name);
+			alert(`The value of the cookie ${name} is: ${value}`);
+		}
+
+		//borrarCookie function
+		function borrarCookie() {
+			let name = prompt("Enter the name of the cookie: ");
+			deleteCookie(name);
+			alert(`The cookie ${name} has been deleted.`);
+		}
+
+		//verCookies function
+		function verCookies() {
+			alert(document.cookie);
+		}
+    </script>
+</body>
+</html>

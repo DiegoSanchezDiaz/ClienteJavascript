@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>document</title>
+    </head>
+    <body>
+        <p id="id"></p>
+        <!--
+        <script>
+            window.name = "Mi ventana";
+            let texto = ""; 
+            texto += "<br/> Nombre : "+window.name; 
+            texto+= "<br/> Alto externo : "+window.outerHeight;
+            texto+= "<br/> Ancho externo : "+window.outerWidth;
+            texto+= "<br/> Alto interno : "+window.innerHeight; 
+            texto+= "<br/> Ancho interno : "+window.innerWidth; 
+            texto += "<br/> Distancia X : "+window.screenX;
+            texto += "<br/> Distancia Y : "+window.screenY; 
+    
+            document.getElementById("id").innerHTML = texto; 
+
+            let miVentana;
+            function crearVentana() {
+                miVentana=window.open("https://www.google.com");
+            }
+
+            function cerrarVentana() {
+                if (window.confirm("¿Seguro que quieres cerrar la ventana?")) {
+                    miVentana.close();
+                } else {
+
+                }
+            }
+
+            function redimensionarVnetana(){
+
+            }
+
+            function moverVentana() {
+                miVentana.moveBy(10,10);
+            }
+
+            function enfocar() {
+                miVentana.focus();
+            }
+
+            function imprimir() {
+                print();            //Ventana actual
+                miVentana.print();  //Imprime la otra ventana
+            }
+        </script>
+        -->
+        <script>
+            function saludar() {
+                alert("Buenos dias")
+            }
+        </script>
+
+        <button onclick="setTimeout(saludar,4000)">Saludar</button>
+        <button onclick="setInterval(saludar,2000)">Resaludar</button>
+
+        <button onclick ="moverVentana()">Mover ventana</button>
+        <button onclick ="enfocar()">Enfocar ventana</button>
+        <button onclick ="imprimir()">Imprimir ventana</button>
+        <button onclick ="crearVentana()">Crear ventana</button>
+        <button onclick ="cerrarVentana()">Cerrar ventana</button>
+
+    </body>
+</html>

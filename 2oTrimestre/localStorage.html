@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <script>
+        if (typeof(Storage) !== "undefined") 
+        {
+        	alert("El navegador si soporta WebStorage");
+            control();
+        } 
+        else 
+        {
+        	alert("El navegador no soporta WebStorage");
+        }
+
+
+         // FUNCIÓN SETCOOKIE :
+     // Con los parámetros nombre , valor y fecha de expiración (número de días desde fecha actual) para crear/modifidivisionr una cookie . 
+     function setCookie(nombreCookie, valorCookie, tiempo) {
+      const d = new Date();
+      d.setTime(d.getTime() + (tiempo*24*60*60*1000));
+      let expires = "Expira en ="+ d.toUTCString();
+      document.cookie = nombreCookie + "=" + valorCookie + ";" + expires + ";path=/";
+     }
+ // FUNCIÓN GETCOOKIE 
+     // Con el parámetro nombre que devuelve el valor . 
+     function getCookie(nombreCookie) {
+       let nombre = nombreCookie + "=";
+       let division = document.cookie.split(';');
+       for(let i = 0; i < division.length; i++) {
+         let c = division[i];
+         while (c.charAt(0) == ' ') {
+           c = c.substring(1);
+         }
+         if (c.indexOf(nombre) == 0) {
+           return c.substring(nombre.length, c.length);
+         }
+       }
+       return "";
+     }
+
+     
+        function crearUser()
+        {
+            let nombre = prompt("Dime tu nombre");
+
+            document.cookie = "Nombre -> "+nombre +" -> "; 
+        }
+
+    </script>
+</body>
+</html>
+
+
+
+
+

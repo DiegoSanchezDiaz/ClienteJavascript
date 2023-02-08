@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 3 ASYNC </title>
+</head>
+<body>
+    <script>
+
+        //Ejemplo1 
+        setTimeout(function(){console.log("He ejecutado la funcion")},7000);
+
+        //Ejemplo2              ---> Con función flecha . 
+        setTimeout(() => console.log("Esta es la parte de síncrono"),7000);
+
+        //Ejemplo3 
+        let miPromesa = new Promise((resolve , reject) => {
+            setTimeout(function()
+            {
+                resolve(console.log("¡Ejecutada la promesa en 3 segundos ¡"));
+            },3000);
+        })
+
+
+        //Ejemplo4 
+
+        let realizado = true ; 
+        const tareaCompletada = new Promise((resolve,reject) => 
+        {
+            if(realizado)
+            {
+                const trabajoCompletado = "La tarea se ha completado";
+                resolve(trabajoCompletado);
+                console.log(trabajoCompletado);
+            }
+            else
+            {
+                const trabajoFallido = "No he podido completar la tarea";
+                reject(trabajoFallido);
+                console.log(trabajoFallido);
+            }
+        });
+
+        //Ejemplo 5 : 
+        const miPromesa2 = new Promise((resolve, reject) =>  
+        {
+            const numero = Math.floor(Math.random()*10) ; 
+            setTimeout(() => (numero > 5 ? resolve(numero): reject(new Error("Obtenido el numero menor de 5"))),5000);
+        });
+
+        miPromesa2.then(numero => console.log(numero))
+        miPromesa.cath(error => console.error(error))
+
+    </script>
+</body>
+</html>

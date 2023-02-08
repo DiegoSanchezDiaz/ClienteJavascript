@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantidad hijos DIV</title>
+</head>
+<body>
+
+    <select id="seleccion">
+        <option value="P">Párrafo</option>
+        <option value="BOTTOM">Boton</option>
+    </select>
+
+    <div id="div1">
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+        <p>Este es el tercer párrafo</p>
+        <button id="boton" onclick="boton()">Cantidad de Hijos del DIV</button>
+    </div>
+
+
+    <script>
+        
+        /**
+         * Confeccionar una página que contenga un div con tres párrafos. Luego acceder a la propiedad 
+         * childNodes, verificar cuantos hijos tiene y de que tipo de nodos se tratan.
+         */
+
+         const referencia = document.getElementById("div1").children;
+
+         function boton()
+         {
+
+            let aux = "" ; 
+            if(document.getElementById("seleccion").value == 'P')
+            {
+                aux = "P";
+            }
+            else
+            {
+                aux = "BUTTON";
+            }
+
+            let contador = 0 ; 
+            for (let i = 0; i < referencia.length; i++)
+            {
+                //alert( referencia[i].tagName ); 
+                if(referencia[i].tagName == aux)
+                {
+                    contador = contador + 1 ;
+                }
+            }
+
+            alert("Hay "+contador+" de tipo "+document.getElementById("seleccion").value);
+        }
+        
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookies</title>
+</head>
+<body>
+        <div>
+            <button type="button" id="verTodas">Ver todas las cookies</button>
+            <button type="button" id="crearCookie">Crear cookie</button>
+            <button type="button" id="modificarCookie">Modificar cookie</button>
+            <button type="button" id="borrarCookie">Borrar cookie</button>
+            <button type="button" id="leerCookie">Leer cookie</button>
+        </div>
+
+    <script>
+
+        document.getElementById("verTodas").addEventListener("click",verTodas);
+        document.getElementById("crearCookie").addEventListener("click",crearCookie);  
+        document.getElementById("modificarCookie").addEventListener("click",modificarCookie);       
+
+        function verTodas()
+        {
+            alert(document.cookie);
+        }
+
+        function crearCookie()
+        {
+            let nombre = prompt("Introduce tu nombre");
+            let apellido = prompt("Introduce tu apellido");
+            document.cookie = "Nombre = "+nombre+" Apellido = "+apellido;
+        }
+
+        function modificarCookie()
+        {
+            let modificacion = prompt("Que dato deseas cambiar");
+
+            let division = document.cookie.split(";");
+
+            let val = prompt("Introduzca el nuevo dato");
+            setCookie("Apellido = "+val);
+                
+            
+
+            
+        }
+    
+
+    </script>
+</body>
+</html>

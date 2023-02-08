@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PuntoFinalParrafo</title>
+</head>
+<body>
+
+
+    <div id="div1">
+        <h1>Primer Bloque De Párrafos</h1> 
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+        <p>Este es el tercer párrafo</p>
+    </div>
+
+    <div id="bloque2"> 
+        <h1>Bloque De Párrafos </h1> 
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+        <p>Este es el tercer párrafo</p>
+        <button id="boton" onclick="boton()">Agregar punto al final del párrafo</button>
+    </div>  
+
+
+    <script>
+        
+        /**
+         * Confeccionar una página que contenga un div con tres párrafos. Luego acceder a la propiedad 
+         * childNodes, verificar cuantos hijos tiene y de que tipo de nodos se tratan.
+         */
+
+         const referencia = document.getElementById("bloque2").children;
+
+         function boton()
+         {
+            for (let i = 0; i < referencia.length; i++)
+            {
+                //alert( referencia[i].tagName ); 
+
+                if(referencia[i].tagName == 'P')
+                {
+                    referencia[i].innerHTML = referencia[i].innerHTML+".";
+                }
+                
+            }
+
+        }
+        
+
+
+    </script>
+    
+</body>
+</html>

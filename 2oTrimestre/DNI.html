@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        DNI
+    </head>
+    <body>
+        <script>
+            function verificarDni() {
+                let dni = prompt("Introduzca su DNI: ");
+            dni = dni.toString();
+            dni = dni.toUpperCase();
+
+            let letra = dni.charAt(8);
+            console.log("La letra del DNI es: " + letra);
+
+            const numero = dni.slice(0, dni.length - 1);
+            console.log("El numero del DNI es: " + numero); 
+
+            var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+            var letraArray = letras[numero % 23];
+            if(letraArray != letra) {
+                console.log("INCORRECTO");
+            }
+            else {
+                console.log("CORRECTO");
+            }
+            }
+            verificarDni();
+            
+        </script>
+    </body>
+</html>

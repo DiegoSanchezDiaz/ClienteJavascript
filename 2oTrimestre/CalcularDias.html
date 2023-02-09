@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <!-- <form action="calculo.html">
+            <input type="date" id="fecha1" name="fecha1"><br><br>
+            <input type="date" id="fecha2" name="fecha2"><br><br>
+            <input type="submit">
+        </form> -->
+        <script>
+
+            let hoy = Date.parse('05 Oct 2022 09:30:00 GMT');
+            let fija = Date.parse('01 Oct 2022 12:20:00 GMT');
+
+            let diferencia = hoy - fija;
+            let dias = diferencia / 86400000;
+            let horas = (diferencia % 86400000) / 3600000;
+            let minutos = ((diferencia % 86400000) % 3600000) / 60000;
+
+            console.log(Math.trunc(dias) + " dias");
+            console.log(Math.trunc(horas) + " horas");
+            console.log(Math.trunc(minutos) + " minutos");
+        </script>
+    </body>
+</html>

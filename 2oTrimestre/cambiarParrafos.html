@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+        <style>
+            .miClase {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            window.addEventListener("load",inicio);
+            function inicio() {
+                document.getElementById("cambiarTextos").addEventListener("click",cambiarTextos);
+                document.getElementById("cambiarClases").addEventListener("click",cambiarClases);
+                document.getElementById("quitarClases").addEventListener("click",quitarClases);
+            }
+
+            function cambiarTextos() {
+                document.getElementById("parrafo1").innerHTML="Cambiado el primer parrafo";
+                document.getElementsByTagName("p")[1].innerHTML="Cambiado el segundo parrafo";
+                document.getElementsByClassName("miClase")[0].innerHTML="Cambiado el tercer parrafo";
+            }
+
+            function cambiarClases() {
+                document.getElementById("parrafo1").setAttribute("class","miClase");
+                document.getElementById("parrafo2").className="miClase";
+            }
+            /*
+            function quitarClases() {
+                document.getElementById("parrafo1").setAttribute("class","");
+                document.getElementById("parrafo2").setAttribute("class","");
+                document.getElementById("parrafo3").setAttribute("class","");
+            }
+            */
+            function quitarClases() {
+                for(let i=0; i<document.getElementsByTagName("p").length; i++) {
+                    document.getElementsByTagName("p")[i].className="";
+                }
+            }
+        </script>
+        <div id="main">
+            <p id="parrafo1">Este es el primer parrafo</p>
+            <p id="parrafo2">Este es el segundo parrafo</p>
+            <p id="parrafo3" class="miClase">Este es el tercer parrafo</p>
+        </div>
+        <br/>
+        <button id="cambiarTextos">Cambiar texto de parrafos</button>
+        <button id="cambiarClases">Cambiar clases de parrafos</button>
+        <button id="quitarClases">Quitar clases de parrafos</button>
+    </body>
+</html>

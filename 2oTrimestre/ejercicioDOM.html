@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+        <style>
+            .miClase {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            window.addEventListener("load",inicio);
+                function inicio() {
+                    document.getElementById("crearParrafo").addEventListener("click",crearParrafo);
+                    document.getElementById("crearImagen").addEventListener("click",crearImagen);
+                    document.getElementById("borrarUltimo").addEventListener("click",borrarUltimo);
+                    document.getElementById("borrarPrimero").addEventListener("click",borrarPrimero);
+                    document.getElementById("sustituirPrimero").addEventListener("click",sustituirPrimero);
+                }
+
+                function crearParrafo() {
+                    let miParrafo=document.createElement("p");
+                    let texto=document.createTextNode(document.getElementById("texto").value);
+                    miParrafo.appendChild(texto);
+                    miParrafo.setAttribute("class","miClase");
+                    let contenido=document.getElementById("miDiv");
+                    contenido.appendChild(miParrafo);
+                }
+
+                function crearImagen() {
+                    let imagen=document.createElement("img");
+                    let ruta=prompt("Dime la ruta");
+                    imagen.setAttribute("src",ruta);
+                    imagen.setAttribute("alt",prompt("Introduce el texto alternativo"));
+                    let contenido=document.getElementById("miDiv");
+                    contenido.appendChild(imagen);
+                }
+
+                function borrarUltimo() {
+                    let cont=document.getElementById("miDiv");
+                    let hijo1=cont.lastChild; // Selecciona el ultimo hijo
+                    // Elimina un elemento hijo
+                    cont.removeChild(hijo1);
+                }
+
+                function borrarPrimero() {
+                    let cont1=document.getElementById("miDiv");
+                    let hijo2=cont1.firstChild; // Selecciona el primer hijo
+                    // Elimina un elemento hijo
+                    cont1.removeChild(hijo2);
+                }
+
+                function sustituirPrimero() {
+                    let cont2=document.getElementById("miDiv");
+                    let miParrafo=document.createElement("p");
+                    let texto=document.createTextNode("VACIO");
+                    miParrafo.append(texto);
+                    cont2.replaceChild(miParrafo,cont2.firstChild);
+                }
+        </script>
+        <div id="miDiv"></div>
+        <textarea id="texto"></textarea>
+        <br/>
+        <button id="crearParrafo">Crear parrafo</button>
+        <button id="crearImagen">Crear imagen</button>
+        <button id="borrarUltimo">Borrar ultimo</button>
+        <button id="borrarPrimero">Borrar primero</button>
+        <button id="sustituirPrimero">Sustituir primero</button>
+    </body>
+</html>
